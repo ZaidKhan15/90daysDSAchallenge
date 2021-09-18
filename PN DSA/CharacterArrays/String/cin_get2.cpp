@@ -20,7 +20,10 @@ int main()
          temp = cin.get();
      }
      meet[len] = '\0'; //getting garbage value at last if comment this
+
+
      cout<<"Length is :"<<len<<endl;
+    
      cout<<meet<<endl;
 
 }
