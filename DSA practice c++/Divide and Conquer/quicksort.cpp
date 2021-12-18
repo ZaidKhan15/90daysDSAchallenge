@@ -20,7 +20,7 @@ int partition(vector<int> &a,int s,int e){
 	
 }
 
-void quicksort(vector<int> &a, int s,int e){
+void quicksort(vector<int> &a,int s,int e){
 	
 	if(s>=e){
 		return;
