@@ -1,13 +1,13 @@
-
+using namespace std;
 
 class List;
 
 class Node
 {
-int data;
+
 
 public:
-    
+    int data;
     Node *next;
 
     Node(int d) : data(d), next(NULL) {} //Initialising List New way

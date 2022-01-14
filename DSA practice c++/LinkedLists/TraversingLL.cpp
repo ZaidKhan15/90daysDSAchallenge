@@ -23,13 +23,13 @@ while (n != NULL)
 
 int main()
 {
-    Node* head = NULL;
-    Node* Second = NULL;
-    Node* third = NULL;
+    // Node* head = NULL;
+    // Node* Second = NULL;
+    // Node* third = NULL;
 
-    head = new Node();
-    Second = new Node();
-    third = new Node();
+   Node* head = new Node();
+    Node* Second = new Node();
+    Node* third = new Node();
 
     head->data=1;
     head->next=Second;
