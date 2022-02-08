@@ -15,6 +15,12 @@ using namespace std;
          this->prev = NULL;
          this->next = NULL;
      }
+     ~Node(){
+         if(this->next!=NULL){
+             delete next;
+             this->next = NULL;
+         }
+     }
  };
 void inseratHead(Node* &head,int x){
      Node* temp1 = new Node(x);
@@ -56,6 +62,47 @@ void insertatPos(Node* &head,Node* &tail,int pos,int x){
 
 }
 
+void deleteatNode(Node* &head,Node* &tail,int pos){
+     
+     if(pos==1){
+         Node* temp = head;
+         temp->next->prev = NULL;
+         head = temp->next;
+         temp->next = NULL;
+         
+         delete temp;
+     }
+     else{
+         Node* curr = head;
+         Node* prevNode = NULL;
+
+         int cnt = 1;
+         while(cnt < pos){
+             prevNode = curr;
+             curr = curr->next;
+             cnt++;
+         }
+         
+        //  if(curr->next == NULL){
+        //   //TAIL SHIFTING CODE
+        //      curr->prev = NULL;
+        //      prevNode->next = NULL;
+        //      delete curr;
+        //      tail = prevNode;
+
+        //  }
+         curr->prev = NULL;
+         prevNode->next = curr->next;
+         curr->next = NULL;
+         if(prevNode->next==NULL){
+             tail = prevNode;
+         }
+         
+         delete curr;
+
+     }
+}
+
 
 void print(Node* head){
   Node* temp = head;
@@ -79,6 +126,12 @@ insertatTail(tail,13);
 insertatTail(tail,25);
 insertatPos(head,tail,2,55);
 print(head);
+deleteatNode(head,tail,5);
+cout<<head->data<<endl;
+cout<<tail->data<<endl;
+print(head);
+cout<<head->data<<endl;
+cout<<tail->data<<endl;
 
     return 0;
 }
